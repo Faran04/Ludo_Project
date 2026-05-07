@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ludo Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HOME / LOADING PAGE -->
+  <section id="home-page" class="screen home-screen">
+    <div class="home-card">
+      <h1>Ludo Game</h1>
+      <p>A digital board game created using HTML, CSS and JavaScript.</p>
+
+      <div class="loading-bar">
+        <div class="loading-fill"></div>
+      </div>
+
+      <button id="continueBtn">Continue</button>
+    </div>
+  </section>
+
+  <!-- PLAYER SELECTION PAGE -->
+  <section id="player-page" class="screen player-screen hidden">
+    <div class="select-card">
+      <h2>Select Game Mode</h2>
+      <p>Choose how many players will play the game.</p>
+
+      <div class="mode-grid">
+        <button class="mode-card" onclick="startGame(2)">
+          <img src="images/two-players.png" alt="Two players">
+          <span>2 Players</span>
+        </button>
+
+        <button class="mode-card" onclick="startGame(4)">
+          <img src="images/four-players.png" alt="Four players">
+          <span>4 Players</span>
+        </button>
+        <button class="mode-card" onclick="startTeamGame()">
+  <img src="images/team-play.png" alt="Team play">
+  <span>Team Play</span>
+</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN GAME PAGE -->
+  <div id="game-page" class="app hidden">
+    <header class="topbar">
+      <div>
+        <h1>Ludo Game</h1>
+        <p class="subtitle">HTML, CSS and JavaScript project for VS Code</p>
+      </div>
+
+      <div class="controls">
+        <button id="rollBtn">Roll Dice</button>
+        <button id="restartBtn" class="secondary">Restart</button>
+      </div>
+    </header>
+
+    <section class="panel">
+      <div class="status-grid">
+        <div><strong>Current turn:</strong> <span id="currentTurn">Red</span></div>
+        <div><strong>Dice:</strong> <span id="diceValue">-</span></div>
+        <div><strong>Message:</strong> <span id="message">Click “Roll Dice” to start.</span></div>
+      </div>
+
+      <div class="legend">
+        <span class="pill red">Red</span>
+        <span class="pill green">Green</span>
+        <span class="pill yellow">Yellow</span>
+        <span class="pill blue">Blue</span>
+      </div>
+    </section>
+
+    <main class="board-wrap">
+      <div id="board" class="board" aria-label="Ludo board"></div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
